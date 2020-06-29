@@ -40,15 +40,15 @@
                 <form action='?page=product&method=update&id=$id' method='post'>
                 <div class='form-group'>
                     <label for='name'>Nome</label>
-                    <input class='form-control' id='name' name='name' type='text' value=$name>
+                    <input class='form-control' id='name' name='name' type='text' value='$name'>
                 </div>
                 <div class='form-group'>
                     <label for='price'>Preço</label>
-                    <input class='form-control' id='price' name='price' type='number' pattern='[0-9]+([,\.][0-9]+)?' min='0' step='any' value=$price>
+                    <input class='form-control' id='price' name='price' type='number' pattern='[0-9]+([,\.][0-9]+)?' min='0' step='any' value='$price'>
                 </div>
                 <div class='form-group'>
                     <label for='description'>Descrição</label>
-                    <input class='form-control' id='description' name='description' type='text' value=$description>
+                    <input class='form-control' id='description' name='description' type='text' value='$description'>
                 </div>
                 <br/>                
                 <button type='submit' class='btn btn-success'>Salvar</button> 
