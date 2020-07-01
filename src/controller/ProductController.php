@@ -33,13 +33,20 @@
 
         public function add() {
             ProductHelper::formProduct();
-
             $product = new Product();
 
             if(isset($_POST['name'], $_POST['price'],$_POST['description'])) {
                 $product->setName($_POST['name']);
                 $product->setPrice($_POST['price']);
                 $product->setDescription($_POST['description']);
+                
+                $typeFile = strtolower(substr($_FILES['image']['name'], -4));
+                $fileName = md5(time()).$typeFile;
+                $filePath = '/opt/lampp/htdocs/www/php-crud/src/assets/img/';
+
+                move_uploaded_file($_FILES['image']['tmp_name'], $filePath.$fileName);
+
+                $product->setImage($fileName);
 
                 if(!empty($product->getName())) {
                     $productDAO = new ProductDAO();

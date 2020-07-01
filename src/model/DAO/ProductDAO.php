@@ -43,7 +43,7 @@
              $query = "INSERT INTO
                     " . $this->table . "
                 SET
-                name=:name,price=:price,description=:description";
+                name=:name,price=:price,description=:description, image=:image";
 
             $stmt = $this->conn->prepare($query);
 
@@ -51,11 +51,13 @@
             $product->setName(htmlspecialchars(strip_tags($product->getName())));
             $product->setPrice(htmlspecialchars(strip_tags($product->getPrice())));
             $product->setDescription(htmlspecialchars(strip_tags($product->getDescription())));
+            $product->setImage(htmlspecialchars(strip_tags($product->getImage())));
 
             // bind de valores
             $stmt->bindValue(":name", $product->getName());
             $stmt->bindValue(":price", $product->getPrice());
             $stmt->bindValue(":description", $product->getDescription());
+            $stmt->bindValue(":image", $product->getImage());
             
 
             if($stmt->execute()){

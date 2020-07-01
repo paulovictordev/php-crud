@@ -1,5 +1,4 @@
 <?php
-    //namespace App\model\domain;
 
     class Product
     {
@@ -7,6 +6,7 @@
         private $name;
         private $price;
         private $description;
+        private $image;
 
         public function __construct() {
         }
@@ -41,6 +41,14 @@
     
         public function setDescription($description) {
             $this->description = $description;
+        }
+
+        public function getImage() {
+            return $this->image;
+        }
+    
+        public function setImage($image) {
+            $this->image = $image;
         }
     }    
 ?>

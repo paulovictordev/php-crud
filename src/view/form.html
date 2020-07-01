@@ -1,5 +1,5 @@
 <div>
-    <form action="?page=product&method=add" method="post">
+    <form action="?page=product&method=add" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Nome</label>
             <input class="form-control" id="name" name="name" type="text" placeholder="Nome">
@@ -11,6 +11,10 @@
         <div class="form-group">
             <label for="description">Descrição</label>
             <input class="form-control" id="description" name="description" type="text" placeholder="Descrição">
+        </div>
+        <div class="form-group">
+            <label for="image">Imagem</label>
+            <input class="form-control" id="image" name="image" type="file" placeholder="Imagem" accept="image/png, image/jpeg">
         </div>
             <br/>
             <button type="submit" class="btn btn-primary">Adicionar</button>
